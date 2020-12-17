@@ -44,6 +44,7 @@
             class="rounded-md bg-blue-50 border-2 border-gray-400 px-2 py-1"
             :class="{'border-red-600': titleError}"
             ref="title"
+            placeholder="Resource title"
           />
         </section>
 
@@ -56,6 +57,7 @@
             class="rounded-md bg-blue-50 border-2 border-gray-400 px-2 py-1"
             :class="{'border-red-600': descriptionError}"
             ref="description"
+            placeholder="Resource description"
           ></textarea>
         </section>
 
@@ -68,6 +70,7 @@
             class="rounded-md bg-blue-50 border-2 border-gray-400 px-2 py-1"
             :class="{'border-red-600': linkError}"
             ref="link"
+            placeholder="Resource link"
           />
         </section>
 
