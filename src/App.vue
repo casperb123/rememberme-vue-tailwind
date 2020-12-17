@@ -42,6 +42,12 @@ export default {
           description: "Learn go google...",
           link: "https://google.com",
         },
+        {
+          id: "tailwindcss",
+          title: "Tailwindcss",
+          description: "Learn to use tailwindcss",
+          link: "https://tailwindcss.com",
+        },
       ],
       addResourceDialog: false,
     };
