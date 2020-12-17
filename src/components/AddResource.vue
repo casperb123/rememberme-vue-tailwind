@@ -44,7 +44,7 @@
               id="title"
               class="rounded-md bg-blue-50 border-2 border-gray-400 px-2 py-1"
               :class="{'border-red-600': titleError}"
-              v-model="title"
+              ref="title"
             />
           </section>
 
@@ -56,7 +56,7 @@
               rows="5"
               class="rounded-md bg-blue-50 border-2 border-gray-400 px-2 py-1"
               :class="{'border-red-600': descriptionError}"
-              v-model="description"
+              ref="description"
             ></textarea>
           </section>
 
@@ -68,7 +68,7 @@
               id="link"
               class="rounded-md bg-blue-50 border-2 border-gray-400 px-2 py-1"
               :class="{'border-red-600': linkError}"
-              v-model="link"
+              ref="link"
             />
           </section>
 
@@ -85,30 +85,27 @@ export default {
   data() {
     return {
       errors: [],
-      title: null,
-      description: null,
-      link: null,
       titleError: false,
       descriptionError: false,
       linkError: false,
     };
   },
   methods: {
-    validateForm() {
+    validateForm(title, description, link) {
       this.errors = [];
       this.titleError = false;
       this.descriptionError = false;
       this.linkError = false;
 
-      if (!this.title) {
+      if (!title) {
         this.errors.push("Title is required.");
         this.titleError = true;
       }
-      if (!this.description) {
+      if (!description) {
         this.errors.push("Description is required.");
         this.descriptionError = true;
       }
-      if (!this.link) {
+      if (!link) {
         this.errors.push("Link is required.");
         this.linkError = true;
       }
@@ -117,7 +114,11 @@ export default {
       return true;
     },
     submitData() {
-      if (this.validateForm()) {
+      const enteredTitle = this.$refs.title.value;
+      const enteredDescription = this.$refs.description.value;
+      const enteredLink = this.$refs.link.value;
+
+      if (this.validateForm(enteredTitle, enteredDescription, enteredLink)) {
         this.$emit("add", {
           title: enteredTitle,
           description: enteredDescription,
