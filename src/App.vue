@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <the-header title="Remember Me" />
-    <resources />
+    <resources-list />
     <button
       class="w-full rounded-lg border-2 border-dashed border-gray-200 py-5 text-gray-400 hover:border-gray-300 hover:text-gray-500 transition-colors"
       @click="showAddResourceDialog"
@@ -18,13 +18,13 @@
 
 <script>
 import TheHeader from "./components/TheHeader.vue";
-import Resources from "./components/Resources.vue";
+import ResourcesList from "./components/ResourcesList.vue";
 import AddResource from "./components/AddResource.vue";
 
 export default {
   components: {
     TheHeader,
-    Resources,
+    ResourcesList,
     AddResource,
   },
   data() {
