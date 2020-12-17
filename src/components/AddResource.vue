@@ -125,5 +125,8 @@ export default {
       }
     },
   },
+  mounted() {
+    this.$refs.title.focus();
+  },
 };
 </script>
