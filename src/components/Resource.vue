@@ -7,7 +7,7 @@
             {{ title }}
           </h2>
           <button
-            class="text-gray-300 hover:text-gray-400"
+            class="text-gray-300 hover:text-gray-400 transition-colors"
             @click.prevent="removeResource(id)"
           >
             <svg

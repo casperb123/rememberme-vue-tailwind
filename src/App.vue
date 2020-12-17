@@ -3,7 +3,7 @@
     <the-header title="Remember Me" />
     <resources />
     <button
-      class="w-full rounded-lg border-2 border-dashed border-gray-200 py-5 text-gray-400 hover:border-gray-300 hover:text-gray-500"
+      class="w-full rounded-lg border-2 border-dashed border-gray-200 py-5 text-gray-400 hover:border-gray-300 hover:text-gray-500 transition-colors"
       @click="showAddResourceDialog"
     >
       Add Resource
